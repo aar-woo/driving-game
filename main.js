@@ -6,10 +6,12 @@ var data = {
   location: {
     x: $car.style.left,
     y: $car.style.top
-  }
+  },
+  carStarted: false
 };
 
 document.addEventListener('keydown', onKeyClicks);
+var carStartedId = null;
 
 function onKeyClicks(event) {
   if (event.code === 'ArrowUp') {
@@ -25,7 +27,13 @@ function onKeyClicks(event) {
     $car.className = 'car face-west';
     data.direction = 'west';
   } else if (event.code === 'Space') {
-    setInterval(moveCarRight, 16);
+    if (data.carStarted === true) {
+      clearInterval(carStartedId);
+      data.carStarted = false;
+    } else {
+      carStartedId = setInterval(moveCarRight, 16);
+      data.carStarted = true;
+    }
   }
 }
 
