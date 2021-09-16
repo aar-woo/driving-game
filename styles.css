@@ -9,3 +9,11 @@ img {
 .carDiv {
   width: 10rem;
 }
+
+.rotate-25-left {
+  transform: rotate(-0.25turn);
+}
+
+.rotate-25-right {
+  transform: rotate(0.25turn);
+}
