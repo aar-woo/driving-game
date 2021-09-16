@@ -11,9 +11,21 @@ img {
 }
 
 .rotate-25-left {
+  transition: transform 0.5s;
   transform: rotate(-0.25turn);
 }
 
 .rotate-25-right {
+  transition: transform 0.5s;
   transform: rotate(0.25turn);
+}
+
+.rotate-180-left {
+  transition: transform 0.5s;
+  transform: rotate(-0.5turn);
+}
+
+.rotate-180-right {
+  transition: transform 0.5s;
+  transform: rotate(0.5turn);
 }
