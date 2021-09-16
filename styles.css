@@ -12,22 +12,20 @@ img {
 
 .face-north {
   transition: transform 0.5s;
-  transform: rotate(-90deg);
+  transform: rotate(-0.25turn);
 }
 
 .face-east {
   transition: transform 0.5s;
-
-  /* transform: rotate(0.25turn); */
   transform: rotate(0deg);
 }
 
-.face-west-counter {
+.face-west {
   transition: transform 0.5s;
   transform: rotate(-0.5turn);
 }
 
-.face-south-clock {
+.face-south {
   transition: transform 0.5s;
   transform: rotate(0.25turn);
 }
