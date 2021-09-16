@@ -8,6 +8,7 @@ img {
 
 .car {
   width: 10rem;
+  position: absolute;
 }
 
 .face-north {
