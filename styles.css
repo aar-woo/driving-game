@@ -6,26 +6,28 @@ img {
   width: 100%;
 }
 
-.carDiv {
+.car {
   width: 10rem;
 }
 
-.rotate-25-left {
+.face-north {
   transition: transform 0.5s;
-  transform: rotate(-0.25turn);
+  transform: rotate(-90deg);
 }
 
-.rotate-25-right {
+.face-east {
   transition: transform 0.5s;
-  transform: rotate(0.25turn);
+
+  /* transform: rotate(0.25turn); */
+  transform: rotate(0deg);
 }
 
-.rotate-180-left {
+.face-west-counter {
   transition: transform 0.5s;
   transform: rotate(-0.5turn);
 }
 
-.rotate-180-right {
+.face-south-clock {
   transition: transform 0.5s;
-  transform: rotate(0.5turn);
+  transform: rotate(0.25turn);
 }
