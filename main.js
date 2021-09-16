@@ -9,9 +9,9 @@ var data = {
   }
 };
 
-document.addEventListener('keydown', onArrowKeyClicks);
+document.addEventListener('keydown', onKeyClicks);
 
-function onArrowKeyClicks(event) {
+function onKeyClicks(event) {
   if (event.code === 'ArrowUp') {
     $car.className = 'car face-north';
     data.direction = 'north';
@@ -24,6 +24,8 @@ function onArrowKeyClicks(event) {
   } else if (event.code === 'ArrowLeft') {
     $car.className = 'car face-west';
     data.direction = 'west';
+  } else if (event.code === 'Space') {
+    setInterval(moveCarRight, 16);
   }
 }
 
@@ -34,12 +36,3 @@ function moveCarRight() {
   data.location.x = $car.style.left;
   data.location.y = $car.sytle.top;
 }
-
-function startCar(event) {
-  if (event.code !== 'Space') {
-    return;
-  }
-  setInterval(moveCarRight, 16);
-}
-
-document.addEventListener('keydown', startCar);
