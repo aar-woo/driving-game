@@ -31,16 +31,31 @@ function onKeyClicks(event) {
       clearInterval(carStartedId);
       data.carStarted = false;
     } else {
-      carStartedId = setInterval(moveCarRight, 16);
+      carStartedId = setInterval(driveCar, 16);
       data.carStarted = true;
     }
   }
 }
 
-function moveCarRight() {
-  var leftVal = parseInt($car.style.left);
-  leftVal += 5;
-  $car.style.left = leftVal + 'px';
+function driveCar() {
+  if (data.direction === 'east' || data.direction === 'west') {
+    var leftVal = parseInt($car.style.left);
+    if (data.direction === 'east') {
+      leftVal += 3;
+    } else {
+      leftVal -= 3;
+    }
+    $car.style.left = leftVal + 'px';
+  } else {
+    var topVal = parseInt($car.style.top);
+    if (data.direction === 'south') {
+      topVal += 3;
+    } else {
+      topVal -= 3;
+    }
+    $car.style.top = topVal + 'px';
+
+  }
   data.location.x = $car.style.left;
   data.location.y = $car.sytle.top;
 }
