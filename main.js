@@ -59,3 +59,15 @@ function driveCar() {
   data.location.x = $car.style.left;
   data.location.y = $car.sytle.top;
 }
+
+const $obstacles = document.querySelectorAll('.stump');
+
+function getObstacleLocations() {
+  const obstacleLocations = {};
+  for (let i = 0; i < $obstacles.length; i++) {
+    obstacleLocations[i] = $obstacles[i].getBoundingClientRect();
+  }
+  return obstacleLocations;
+}
+
+window.addEventListener('onload', getObstacleLocations);
