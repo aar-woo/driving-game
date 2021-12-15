@@ -11,6 +11,10 @@ img {
   position: absolute;
 }
 
+.stump {
+  width: 7rem;
+}
+
 .face-north {
   transition: transform 0.5s;
   transform: rotate(-0.25turn);
