@@ -7,7 +7,8 @@ var data = {
     x: $car.style.left,
     y: $car.style.top
   },
-  carStarted: false
+  carStarted: false,
+  obstacleLocations: {}
 };
 
 document.addEventListener('keydown', onKeyClicks);
@@ -57,7 +58,7 @@ function driveCar() {
 
   }
   data.location.x = $car.style.left;
-  data.location.y = $car.sytle.top;
+  data.location.y = $car.style.top;
 }
 
 const $obstacles = document.querySelectorAll('.stump');
@@ -67,7 +68,7 @@ function getObstacleLocations() {
   for (let i = 0; i < $obstacles.length; i++) {
     obstacleLocations[i] = $obstacles[i].getBoundingClientRect();
   }
-  return obstacleLocations;
+  data.obstacleLocations = obstacleLocations;
 }
 
 window.addEventListener('onload', getObstacleLocations);
